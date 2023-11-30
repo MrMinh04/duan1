@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="giohang.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <!-- <div style="color: green;">
+        <?= $_COOKIE['message'] ?? '' ?>
+    </div> -->
+  <div class="container">
+    <header>
+      <section class="logo">
+        <img src="images/logo_nen_den.png" alt="" height="50px">
+      </section>
+      <nav class="menu">
+        <a href="index.php">Home</a>
+        <a href="#">About</a>
+        <a href="#">Join us</a>
+        <a href="#">Help</a>
+        <a href="#">Cart</a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+    <section class="thanhDieuHuong">
+      <section class="logo2">
+        <img src="images/logo_nen-trang.png" alt="" height="50px">
+      </section>
+      <nav class="menu2">
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kid</a>
+        <a href="#">Sale</a>
+      </nav>
+      <section class="timKiem">
+        <form action="" method="get" class="form">
+          <input type="text" required class="input">
+          <i class="icon"><i class='bx bx-search'></i></i>
+        </form>
+        <a href="" class="icon" id="cart"><i class='bx bx-cart'></i></a>
+      </section>
+    </section>
+    <section class="cart">
+      <div class="container">
+        <div class="cart-top">
+          <h1>YOUR CART</h1>
+        </div>
+        <div class="cart-content">
+
+          <div class="cart-content-left">
+            <div class="cart-content-img">
+              <img src="images/Air Force 1.webp" alt="">
+            </div>
+          </div>
+          <div class="cart-content-right">
+            <h3>Nike Air Force 1 '07 FlyEase</h3>
+            <p style="color: red;">3,239,000₫</p>
+            <p>Kích cỡ: 9 UK</p>
+            <p>Màu sắc: <button>Màu trắng</button></p>
+            <input type="number" value="1" min="1" name="" id="" style="border-radius: 5px; padding: 6px;">
+          </div>
+        </div>
+        <div class="cart-content">
+          <div class="cart-content-left">
+            <div class="cart-content-img">
+              <img src="images/Nike Air Force 1.webp" alt="">
+            </div>
+          </div>
+          <div class="cart-content-right">
+            <h3>Nike Air Force 1 '07 FlyEase</h3>
+            <p style="color: red;">3,239,000₫</p>
+            <p>Kích cỡ: 9 UK</p>
+            <p>Màu sắc: <button>Màu trắng</button></p>
+            <input type="number" value="1" min="1" name="" id="" style="border-radius: 5px; padding: 6px;">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="thanhtoan">
+        <h2 style="background-color: black; border-radius: 5px; color: white; padding: 6px; width: 88%; text-align: center;">Thanh Toán</h2>
+        <br>
+        <h3>Tóm tắt đơn hàng (2 sản phẩm)</h3>
+        <div class="tt1">
+          <p>Các sản phẩm (2): 6.748.000₫</p>
+          <p>Phí vận chuyển: MIỄN PHÍ</p>
+        </div>
+        <p>TỔNG 6.748.000₫</p>
+        <section class="nhapma">
+          <form action="" method="post"></form>
+          <input type="text" name="" id="" value="" placeholder="Nhập mã khuyến mãi của bạn"
+            style="border-radius: 5px; padding: 6px;">
+          <button type="submit" style="background-color: red; border-radius: 5px; padding: 6px;"><a href="">Thêm</a></button>
+          <p>TỔNG CỘNG (2 sản phẩm) 6.478.000₫
+            Các mặt hàng trong giỏ hàng của bạn không được bảo lưu — hãy kiểm tra ngay để đặt hàng.
+          </p>
+          <button type="submit"
+            style="background-color: #45a049; border-radius: 5px; color: white; padding: 6px; width: 88%;"><a href="">Đặt
+              hàng</a></button>
+        </section>
+
+      </div>
+
+    </section>
+    <h1>YOU MAY ALSO LIKE</h1><br>
+    <section class="content1">
+      <!-- <?php foreach ($product as $key => $value): ?> -->
+      <section class="sp1">
+        <img style="height: 270px; width: 270px;" src="images/3.webp" alt="">
+        <section class="thongTin">
+          <!-- <h2>
+                        <?=$value['product_name']?>
+                    </h2>
+                    <h3>
+                        <?=$value['product_price']?>
+                    </h3>
+                    <p>
+                        <?=$value['product_describe']?>
+                    </p> -->
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+        </section>
+      </section>
+      <section class="sp2">
+        <img style="height: 270px; width: 270px;" src="images/1.webp" alt="">
+        <section class="thongTin">
+
+
+
+        
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+          
+
+        </section>
+      </section>
+
+      <section class="sp3">
+        <img style="height: 270px; width: 270px;" src="images/6.webp" alt="">
+        <section class="thongTin">
+
+
+
+        
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+          
+
+        </section>
+      </section>
+
+      <section class="sp4">
+        <img style="height: 270px; width: 270px;" src="images/Air Force 1.webp" alt="">
+        <section class="thongTin">
+
+
+
+        
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+          
+
+        </section>
+      </section>
+      <!-- <?php endforeach ?> -->
+    </section>
+    <footer>
+      <div class="footer1">
+        <div class="footer1_con">
+          <div class="a"><a href="#">FIND A STORE</a><br></div>
+          <div class="a"><a href="#">BECOME A MEMBER</a><br></div>
+          <div class="a"><a href="#">Send Us Feedback</a><br></div>
+        </div>
+        <div class="footer1_con">
+          <div class="a"><a href="#">GET HELP</a><br></div>
+          <div class="aa"><a href="#">Delivery</a><br></div>
+          <div class="aa"><a href="#">Order Status</a><br></div>
+          <div class="aa"><a href="#">Returns</a><br></div>
+          <div class="aa"><a href="#">Payment Options</a><br></div>
+          <div class="aa"><a href="#">Contact Us</a><br></div>
+        </div>
+        <div class="footer1_con">
+          <div class="a"><a href="#">ABOUT HMĐ STORE</a><br></div>
+          <div class="aa"><a href="#">News</a><br></div>
+          <div class="aa"><a href="#">Careers</a><br></div>
+          <div class="aa"><a href="#">Investors</a><br></div>
+          <div class="aa"><a href="#">Sustainability</a><br></div>
+        </div>
+        <div class="rong" style="width: 20px;">
+        </div>
+        <div class="mxh">
+          <a href="https://www.facebook.com/mr.minh04" class="icon" id="aaa">
+            <i class='bx bxl-facebook-circle'></i></a>
+          <a href="https://www.instagram.com/mr_minh04/" class="icon" id="aaa">
+            <i class='bx bxl-instagram'></i></a>
+          <a href="https://www.youtube.com/channel/UCrZOlzK3dPIoGZW6zdTDEoA" class="icon" id="aaa">
+            <i class='bx bxl-youtube'></i></a>
+          <a href="https://www.tiktok.com/@mr_minh04" class="icon" id="aaa">
+            <i class='bx bxl-tiktok'></i></a>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>

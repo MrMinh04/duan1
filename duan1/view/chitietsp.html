@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="chitietsp.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <section class="logo">
+        <img src="images/logo_nen_den.png" alt="" height="50px">
+      </section>
+      <nav class="menu">
+        <a href="index.php">Home</a>
+        <a href="#">About</a>
+        <a href="#">Join us</a>
+        <a href="#">Help</a>
+        <a href="#">Cart</a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+    <section class="thanhDieuHuong">
+      <section class="logo2">
+        <img src="images/logo_nen-trang.png" alt="" height="50px">
+      </section>
+      <nav class="menu2">
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kid</a>
+        <a href="#">Sale</a>
+      </nav>
+      <section class="timKiem">
+        <form action="" method="get" class="form">
+          <input type="text" required class="input">
+          <i class="icon"><i class='bx bx-search'></i></i>
+        </form>
+        <a href="" class="icon" id="cart"><i class='bx bx-cart'></i></a>
+      </section>
+    </section>
+  
+    <section class="boxto">
+      <section class="box1">
+        <div class="product">
+          <img src="images/Nike Air Huarache Runner.webp" alt="">
+        </div>
+        <div class="product">
+          <img src="images/Nike Air Max 90.webp" alt="">
+        </div>
+        <div class="product">
+          <img src="images/Nike Air Flight Lite Mid.webp" alt="">
+        </div>
+        <div class="product">
+          <img src="images/Nike Go FlyEase.webp" alt="">
+        </div>
+      </section>
+      <section class="box2">
+        <div class="noidung">
+          <h1>Nike Air Force 1 '07 FlyEase</h1><br>
+          <h3 style="color: red;">Giá tiền: 3,250,000</h3><br>
+          <p>Debuting in 1982 as a basketball must-have, the Air Force 1 came into its own in the '90s. The clean look of
+            the classic white-on-white AF-1 was endorsed from the basketball courts to the street and beyond</p><br>
+          <h3>Các màu có sẵn:</h3><br>
+          <button type="submit"
+            style="background-color: white; border-radius: 5px; color: black; padding: 6px; width: 10%; text-align: center; border: 1px solid black;">Màu
+            trắng</button>
+          <button type="submit"
+            style="background-color: black; border-radius: 5px; color: white; padding: 6px; width: 10%; text-align: center; margin-bottom: 10px;">Màu
+            đen</button>
+            
+          <h3>Kích cỡ:</h3><br>
+          <table border="1">
+            <tr>
+              <th>Size</th>
+              <th>US</th>
+              <th>UK</th>
+              <th>EU</th>
+            </tr>
+            <tr>
+              <td>37</td>
+              <td>6.5</td>
+              <td>4</td>
+              <td>37</td>
+            </tr>
+            <tr>
+              <td>38</td>
+              <td>7</td>
+              <td>4.5</td>
+              <td>38</td>
+            </tr>
+            <tr>
+              <td>39</td>
+              <td>8</td>
+              <td>5.5</td>
+              <td>39</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>9</td>
+              <td>6.5</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>41</td>
+              <td>9.5</td>
+              <td>7</td>
+              <td>41</td>
+            </tr>
+            <tr>
+              <td>42</td>
+              <td>10</td>
+              <td>7.5</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td>43</td>
+              <td>11</td>
+              <td>8.5</td>
+              <td>43</td>
+            </tr>
+          </table>
+  
+  
+          <button type="submit"
+            style="background-color: black; border-radius: 5px; color: white; padding: 6px; width: 50%; text-align: center; margin-bottom: 10px; margin-bottom: 10px;">Mua
+            ngay</button><br>
+  
+          <button type="submit"
+            style="background-color: black; border-radius: 5px; color: white; padding: 6px; width: 50%; text-align: center; margin-bottom: 10px;">Thêm
+            vào giỏ hàng</button>
+  
+          <p>Quicker than 1, 2, 3—the original hoops shoe lets you step in and get going. Its easy-entry FlyEase system
+            gives you a hands-free experience. Crisp leather dons the cleanest colour for the ultimate wearability. Yeah,
+            it's everything you love and then some.</p><br>
+          
+        </div>
+  
+      </section>
+    </section>
+    
+    <h1 style="text-align: left; text-indent: 100px; text-decoration: underline;">YOU MAY ALSO LIKE</h1><br>
+    <section class="content1">
+      <!-- <?php foreach ($product as $key => $value): ?> -->
+      <section class="sp1">
+        <img style="height: 270px; width: 270px;" src="images/3.webp" alt="">
+        <section class="thongTin">
+          <!-- <h2>
+                        <?=$value['product_name']?>
+                    </h2>
+                    <h3>
+                        <?=$value['product_price']?>
+                    </h3>
+                    <p>
+                        <?=$value['product_describe']?>
+                    </p> -->
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+        </section>
+      </section>
+      <section class="sp2">
+        <img style="height: 270px; width: 270px;" src="images/1.webp" alt="">
+        <section class="thongTin">
+
+
+
+
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+
+
+        </section>
+      </section>
+
+      <section class="sp3">
+        <img style="height: 270px; width: 270px;" src="images/6.webp" alt="">
+        <section class="thongTin">
+
+
+
+
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+
+
+        </section>
+      </section>
+
+      <section class="sp4">
+        <img style="height: 270px; width: 270px;" src="images/Air Force 1.webp" alt="">
+        <section class="thongTin">
+
+
+
+
+          <div class="buy_cart">
+            <button class="buy">
+              <h4>Buy now</h4>
+            </button>
+            <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
+          </div>
+
+
+        </section>
+      </section>
+      <!-- <?php endforeach ?> -->
+    </section>
+    <footer>
+      <div class="footer1">
+        <div class="footer1_con">
+          <div class="a"><a href="#">FIND A STORE</a><br></div>
+          <div class="a"><a href="#">BECOME A MEMBER</a><br></div>
+          <div class="a"><a href="#">Send Us Feedback</a><br></div>
+        </div>
+        <div class="footer1_con">
+          <div class="a"><a href="#">GET HELP</a><br></div>
+          <div class="aa"><a href="#">Delivery</a><br></div>
+          <div class="aa"><a href="#">Order Status</a><br></div>
+          <div class="aa"><a href="#">Returns</a><br></div>
+          <div class="aa"><a href="#">Payment Options</a><br></div>
+          <div class="aa"><a href="#">Contact Us</a><br></div>
+        </div>
+        <div class="footer1_con">
+          <div class="a"><a href="#">ABOUT HMĐ STORE</a><br></div>
+          <div class="aa"><a href="#">News</a><br></div>
+          <div class="aa"><a href="#">Careers</a><br></div>
+          <div class="aa"><a href="#">Investors</a><br></div>
+          <div class="aa"><a href="#">Sustainability</a><br></div>
+        </div>
+        <div class="rong" style="width: 20px;">
+        </div>
+        <div class="mxh">
+          <a href="https://www.facebook.com/mr.minh04" class="icon" id="aaa">
+            <i class='bx bxl-facebook-circle'></i></a>
+          <a href="https://www.instagram.com/mr_minh04/" class="icon" id="aaa">
+            <i class='bx bxl-instagram'></i></a>
+          <a href="https://www.youtube.com/channel/UCrZOlzK3dPIoGZW6zdTDEoA" class="icon" id="aaa">
+            <i class='bx bxl-youtube'></i></a>
+          <a href="https://www.tiktok.com/@mr_minh04" class="icon" id="aaa">
+            <i class='bx bxl-tiktok'></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
