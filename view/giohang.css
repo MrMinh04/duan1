@@ -1,0 +1,51 @@
+.boxto{
+    display: flex;
+    width: 95%;
+    margin-left: 5%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.boxto_rong{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+.boxphai{
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    width: 34%;
+}
+.sanpham{
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+}
+.sanpham img{
+    width: 300px;
+    height: 300px;
+}
+.tt{
+    margin-left: 30px;
+}
+.tt h3{
+    font-size: 25px;
+}
+.tt h4{
+    font-size: 20px;
+}
+.tt h5{
+    font-size: 15px;
+}
+.boxto h2{
+    font-size: 30px;
+}
+/* h2, h3, h4, h5, h6{
+    font-weight: 500;
+} */

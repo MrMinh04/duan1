@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toan</title>
+    <link rel="stylesheet" href="thanhtoan.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <section class="logo">
+            <img src="images/logo_nen_den.png" alt="" height="50px">
+          </section>
+          <nav class="menu">
+            <a href="index.php">Home</a>
+            <a href="#">About</a>
+            <a href="#">Join us</a>
+            <a href="#">Help</a>
+            <a href="#">Cart</a>
+            <a href="#">Account</a>
+          </nav>
+        </header>
+        <section class="thanhDieuHuong">
+          <section class="logo2">
+            <img src="images/logo_nen-trang.png" alt="" height="50px">
+          </section>
+          <nav class="menu2">
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kid</a>
+            <a href="#">Sale</a>
+          </nav>
+          <section class="timKiem">
+            <form action="" method="get" class="form">
+              <input type="text" required class="input">
+              <i class="icon"><i class='bx bx-search'></i></i>
+            </form>
+            <a href="" class="icon" id="cart"><i class='bx bx-cart'></i></a>
+          </section>
+        </section>
+        <div class="thongTin">
+          <h1 style="text-align: center; font-size: 25px;"> <strong>THÔNG TIN GIAO HÀNG</strong></h1><br>
+            <form class="form1">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" placeholder="Họ và tên của bạn" required>
+                <br>
+                <label for="sdt">Số điện thoại :</label>
+                <input type="sdt" id="sdt" placeholder="Số điện thoại" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email" required><br>
+            
+                <label for="address">Địa chỉ:</label>
+                <div>
+                  <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                  <option value="" selected>Chọn tỉnh thành</option>           
+                  </select>
+                            
+                  <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                  <option value="" selected>Chọn quận huyện</option>
+                  </select>
+                  
+                  <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                  <option value="" selected>Chọn phường xã</option>
+                  </select>
+                  <input type="text" id="sonha" placeholder="Nhập số nhà, tên đường/phố của bạn">
+                </div>    
+                <div>
+                  <h2>Thông tin vận chuyển</h2>
+                  <img src="images/Frame 54.png" alt="">
+                  <h3>Tổng tiền sản phẩm của bạn:</h3>
+                  <p>Sản phẩm: Giày Nike</p> <p>Số lượng: 1</p> <p>Phí vận chuyển: 0đ</p>
+                  <h3>Tổng tiền: 2,560,000</h3>
+                  <h3>Chọn phương thức thanh toán</h3><br>
+                  <form action="">
+                    <label for="">Thanh toán khi nhận hàng</label>
+                    <input type="radio" name="" id="" value="" >
+                    <label for="">Thanh toán bằng phương thức khác</label>
+                    <input type="radio" name="" id="" value=""><br>
+                    <input type="checkbox" name="" id="" value="">
+                    <label for="">Tôi đã đọc, hiểu và chấp thuận Chính sách và bảo mật và Các điều khoản và Điều kiện </label><br>
+                    
+                    
+                  </form>
+                  <button type="submit">Thanh toán</button>
+                </div>
+              </form>
+        </div>
+        <footer>
+            <div class="footer1">
+                <div class="footer1_con">
+                  <div class="a"><a href="#">FIND A STORE</a><br></div>
+                  <div class="a"><a href="#">BECOME A MEMBER</a><br></div>
+                  <div class="a"><a href="#">Send Us Feedback</a><br></div>
+                </div>
+                <div class="footer1_con">
+                  <div class="a"><a href="#">GET HELP</a><br></div>
+                  <div class="aa"><a href="#">Delivery</a><br></div>
+                  <div class="aa"><a href="#">Order Status</a><br></div>
+                  <div class="aa"><a href="#">Returns</a><br></div>
+                  <div class="aa"><a href="#">Payment Options</a><br></div>
+                  <div class="aa"><a href="#">Contact Us</a><br></div>
+                </div>
+                <div class="footer1_con">
+                  <div class="a"><a href="#">ABOUT HMĐ STORE</a><br></div>
+                  <div class="aa"><a href="#">News</a><br></div>
+                  <div class="aa"><a href="#">Careers</a><br></div>
+                  <div class="aa"><a href="#">Investors</a><br></div>
+                  <div class="aa"><a href="#">Sustainability</a><br></div>
+                </div>
+                <div class="rong" style="width: 20px;">
+                </div>
+                <div class="mxh">
+                  <a href="https://www.facebook.com/mr.minh04" class="icon" id="aaa">
+                    <i class='bx bxl-facebook-circle'></i></a>
+                  <a href="https://www.instagram.com/mr_minh04/" class="icon" id="aaa">
+                    <i class='bx bxl-instagram'></i></a>
+                  <a href="https://www.youtube.com/channel/UCrZOlzK3dPIoGZW6zdTDEoA" class="icon" id="aaa">
+                    <i class='bx bxl-youtube'></i></a>
+                  <a href="https://www.tiktok.com/@mr_minh04" class="icon" id="aaa">
+                    <i class='bx bxl-tiktok'></i></a>
+                </div>
+              </div>
+        </footer>
+    </div>
+    <script>
+      var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    var wards = document.getElementById("ward");
+    var Parameter = {
+      url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
+      method: "GET", 
+      responseType: "application/json", 
+    };
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+      renderCity(result.data);
+    });
+    
+    function renderCity(data) {
+      for (const x of data) {
+        citis.options[citis.options.length] = new Option(x.Name, x.Id);
+      }
+      citis.onchange = function () {
+        district.length = 1;
+        ward.length = 1;
+        if(this.value != ""){
+          const result = data.filter(n => n.Id === this.value);
+    
+          for (const k of result[0].Districts) {
+            district.options[district.options.length] = new Option(k.Name, k.Id);
+          }
+        }
+      };
+      district.onchange = function () {
+        ward.length = 1;
+        const dataCity = data.filter((n) => n.Id === citis.value);
+        if (this.value != "") {
+          const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+    
+          for (const w of dataWards) {
+            wards.options[wards.options.length] = new Option(w.Name, w.Id);
+          }
+        }
+      };
+    }
+</script>
+</body>
+</html>
