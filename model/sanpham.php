@@ -4,7 +4,15 @@ function display_sanpham(){
     $product = pdo_query($sql);
     return $product;
 }
-
+function display_sanpham_view($kw){
+    $sql = "SELECT * FROM product";
+    if($kw != ""){
+        $sql.=" WHERE product_name LIKE '%".$kw."%'";
+    }
+    $sql.=" order by product_id desc";
+    $product_view = pdo_query($sql);
+    return $product_view;
+}
 function display_new_product(){
     $sql_new_product = "SELECT * FROM product WHERE product_category=1";
     $new_product = pdo_query($sql_new_product);
@@ -61,8 +69,8 @@ function display_sale_featured(){
 
 
 
-function insert_sanpham($product_id,$product_name,$product_image,$product_price,$product_describe,$product_quantity,$product_category){
-    $sql = "INSERT INTO product VALUES('$product_id','$product_name','$product_image','$product_price', '$product_describe','$product_quantity','$product_category')";
+function insert_sanpham($product_id,$product_name,$product_image,$product_image2,$product_image3,$product_image4,$product_price,$product_describe,$product_quantity,$product_category){
+    $sql = "INSERT INTO product VALUES('$product_id','$product_name','$product_image','$product_image2','$product_image3','$product_image4','$product_price', '$product_describe','$product_quantity','$product_category')";
     pdo_execute($sql);
 }
 function delete_san_pham($product_id){

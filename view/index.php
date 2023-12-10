@@ -6,7 +6,7 @@ include("../model/khac.php");
 // session_destroy();
 
 if (!isset($_SESSION['my_cart'])) $_SESSION['my_cart']=[];
-
+$product = display_sanpham();
 $what_hot = display_what_hot();
 $new_product = display_new_product();
 $men_product = display_men_product();
@@ -33,6 +33,15 @@ if((isset($_GET['act'])) && ($_GET['act'])!=""){
         case 'sale':
             include "sale.php";
             break;
+        case 'allsanpham':
+            if (isset($_POST["kw"]) && $_POST["kw"]!=""){
+                $kw = $_POST['kw'];
+            }else{
+                $kw = "";
+            }
+            $product_view = display_sanpham_view($kw);
+            include "allsanpham.php";
+            break;    
         case 'sanphamct':
             if (isset($_GET["product_id"]) && $_GET["product_id"]>0){
                 $product_id = $_GET['product_id'];

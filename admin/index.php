@@ -59,9 +59,14 @@ if(isset($_GET["act"])){
 // SẢN PHẨM--------------------------------------------------------------------------------------
 
         case "list_san_pham":
-            $product = display_sanpham();
-            include("sanpham/list.php");
-            break;
+            if (isset($_POST["kw"]) && $_POST["kw"]!=""){
+                $kw = $_POST['kw'];
+            }else{
+                $kw = "";
+            }
+            $product_view = display_sanpham_view($kw);
+            include "sanpham/list.php";
+            break;    
         case "add_san_pham":
             $category = display_danhmuc();
             if (isset($_POST["add_product"]) && $_POST["add_product"]){
@@ -75,9 +80,24 @@ if(isset($_GET["act"])){
                 $file = $_FILES['product_image'];
                 //lấy tên file
                 $product_image = $file['name'];
+
+                $file2 = $_FILES['product_image2'];
+                //lấy tên file
+                $product_image2 = $file2['name'];
+
+                $file3 = $_FILES['product_image3'];
+                //lấy tên file
+                $product_image3 = $file3['name'];
+
+                $file4 = $_FILES['product_image4'];
+                //lấy tên file
+                $product_image4 = $file4['name'];
                 //Upload
                 move_uploaded_file($file['tmp_name'], "../images/" . $product_image);
-                insert_sanpham($product_id,$product_name,$product_image,$product_price,$product_describe,$product_quantity,$product_category);
+                move_uploaded_file($file['tmp_name'], "../images/" . $product_image2);
+                move_uploaded_file($file['tmp_name'], "../images/" . $product_image3);
+                move_uploaded_file($file['tmp_name'], "../images/" . $product_image4);
+                insert_sanpham($product_id,$product_name,$product_image,$product_image2,$product_image3,$product_image4,$product_price,$product_describe,$product_quantity,$product_category);
                 $thongbao = "Thêm thành công";
             }
             include("sanpham/add.php");
@@ -87,9 +107,14 @@ if(isset($_GET["act"])){
             $product_id = $_GET['product_id'];
             delete_san_pham($product_id);
             }
-            $product = display_sanpham();
-            include("sanpham/list.php");
-            break;
+            if (isset($_POST["kw"]) && $_POST["kw"]!=""){
+                $kw = $_POST['kw'];
+            }else{
+                $kw = "";
+            }
+            $product_view = display_sanpham_view($kw);
+            include "sanpham/list.php";
+            break;  
             
         case "edit_san_pham":
             $category = display_danhmuc();
@@ -115,12 +140,18 @@ if(isset($_GET["act"])){
                 move_uploaded_file($file['tmp_name'], "../images/" . $product_image);
                 update_san_pham($product_id,$product_name,$product_price,$product_describe,$product_quantity,$product_category,$product_image);
             }
-            $product = display_sanpham();
-            include("sanpham/list.php");
-            break;
+            if (isset($_POST["kw"]) && $_POST["kw"]!=""){
+                $kw = $_POST['kw'];
+            }else{
+                $kw = "";
+            }
+            $product_view = display_sanpham_view($kw);
+            include "sanpham/list.php";
+            break;  
 
 //Đơn hàng
         case "list_don_hang":
+            $order = display_don_hang();
             include("donhang/list.php");
             break;
 

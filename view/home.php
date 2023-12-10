@@ -34,6 +34,9 @@
             </a>
             <?php endforeach ?>
         </section>
+        <section class="allShoes">
+            <a href="index.php?act=allsanpham">All SHOES</a>
+        </section>
         <section class="tieuDe">
             <h2>COMING SOON</h2>
         </section>

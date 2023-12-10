@@ -22,6 +22,11 @@ function select_orderr($order_cart_id){
     $orderr = pdo_query($sql);
     return $orderr;
 }
+function display_don_hang(){
+    $sql = "SELECT * FROM orderr";
+    $orderr = pdo_query($sql);
+    return $orderr;
+}
 function select_orderr_cart($order_cart_id){
     $sql = "SELECT * FROM orderr_cart WHERE order_cart_id =".$order_cart_id;
     $orderr_cart = pdo_query($sql);

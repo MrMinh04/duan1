@@ -4,6 +4,7 @@
 </head>
 <?php
 $tong=0;
+$i = 0;
 ?>
 <div class="boxto">
   <div class="boxtrai">
@@ -13,7 +14,7 @@ $tong=0;
     <div class="sanpham">
     <?php
     $tong = $tong + $cart['5'];
-    $i = 0;
+    
     ?>
       <div>
         <img src="../images/<?= $cart['3']?>" alt="">
@@ -29,18 +30,19 @@ $tong=0;
       <div>
       <a href="index.php?act=delcart&idcart=<?=$i?>"><i style="font-size: 20px;" class='bx bxs-message-square-x'></i></a>
       </div>
+      
     </div>
     <?php $i+=1?>
     <?php endforeach?>
     </div>
   </div>
   <div class="boxphai">
-    <h2>Summary</h2><br>
+    <center><h2 style="margin-top: 10px;">SUMMARY</h2></center><br>
     <h3>Tóm tắt đơn hàng</h3><br>
     <h4>Thành tiền sản phẩm: <?= $tong?> VND</h4><br>
     <h4>Phí vận chuyển: MIỄN PHÍ</h4><br>
     <h4>Tổng cộng: <?= $tong?> VND</h4><br>
-    <a href="index.php?act=checkout">Checkout</a>
+    <a href="index.php?act=checkout"><button class="checkout">Guest Checkout <i class='bx bxs-cart'></i></button></a>
   </div>
 </div>
 

@@ -36,8 +36,8 @@
                 <a href="index.php?act=sale" class="sale">Sale</a>
             </nav>
             <section class="timKiem">
-                    <form action="" method="get" class="form" required>
-                        <input type="text" required class="input">
+                    <form action="index.php?act=allsanpham" method="post" class="form" required>
+                        <input type="text" required name="kw">
                         <i class="icon"><i class='bx bx-search'></i></i>
                     </form>
                     <a href="index.php?act=cart_home" class="icon" id="cart"><i class='bx bx-cart'></i></a>

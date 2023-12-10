@@ -6,13 +6,13 @@
     <title>Duan1</title>
 </head>
 <body>
-    <?php if (isset($_SESSION['username'])) : ?>
-            <div>
-                WELCOME <b><?= $_SESSION['username'] ?></b>
-                <a href="logout.php">Thoát</a>
-            </div>
-        <?php endif ?>
-
+    <div>
+    <h2>Tất cả sản phẩm</h2>
+    <form action="index.php?act=list_san_pham" method="post" class="form" required>
+        Tìm kiếm sản phẩm:
+        <input type="text" required name="kw">
+    </form>
+    </div>
         <div style="color: green;">
             <?= $_COOKIE['message'] ?? '' ?>
         </div>
@@ -29,7 +29,7 @@
                 <a href="index.php?act=add_san_pham">Thêm</a>
             </th>
         </tr>
-        <?php foreach ($product as $pr) : ?>
+        <?php foreach ($product_view as $pr) : ?>
             <tr>
                 <td><?= $pr['product_id'] ?></td>
                 <td><?= $pr['product_name'] ?></td>

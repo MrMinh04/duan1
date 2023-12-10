@@ -10,16 +10,19 @@
     margin-left: 5%;
     margin-top: 10px;
 }
+.boxtrai{
+    margin-top: 5px;
+}
 .boxphai{
     border-left: 3px solid black;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-    padding-left: 30px;
-    padding-top: 30px;
+    padding-left: 3%;
+    /* padding-top: 30px; */
     padding-bottom: 30px;
-
+    height: auto;
     width: 34%;
 }
 .sanpham{
@@ -49,3 +52,16 @@
 /* h2, h3, h4, h5, h6{
     font-weight: 500;
 } */
+.checkout{
+    color: white;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    /* padding: 10px 40px; */
+    margin-top: 15px;
+    height: 60px;
+    width: 94%;
+    font-weight: 600;
+    font-size: 18px;
+}

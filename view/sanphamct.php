@@ -28,7 +28,7 @@
         
           <?php foreach ($update as $up): ?>
             <h1><?= $up['product_name']?></h1><br>
-            <h3 style="color: red;"><?= $up['product_price']?></h3><br>
+            <h3 style="color: red;"><?= $up['product_price']?> VND</h3><br>
             <p><?= $up['product_describe']?></p><br>
             <?php endforeach?>
           <!-- <h3>Kích cỡ:</h3><br>
@@ -57,20 +57,21 @@
             <input type="hidden" name="product_image" value="<?= $up['product_image']?>">
             <input type="hidden" name="product_price" value="<?= $up['product_price']?>">
 
-            <h3>Các màu có sẵn:</h3>
+            <h3 style="padding: 5px 0px;">Các màu có sẵn:</h3>
             <?php foreach ($color as $cl): ?>
             <input type="radio" name="color" id="" value="<?= $cl['color_name']?>" required><?= $cl['color_name']?>
             <?php endforeach?>
 
-            <h3>Kích cỡ:</h3>
+            <h3 style="padding: 5px 0px;">Kích cỡ:</h3>
             <?php foreach ($size as $si): ?>
             <input type="radio" name="size" id="" value="<?= $si['size_name']?>" required><?= $si['size_name']?>
             <?php endforeach?><br>
 
-            <h3>Số lượng:</h3>
-            <input type="number" name="sl" style="border: 1px solid black;" min="1" required>
-            
-            <input type="submit" name="addtocart" value="Add to cart">
+            <h3 style="padding: 5px 0px;">Số lượng:</h3>
+            <input class="sl" type="number" name="sl" min="1" required>
+            <br>
+            <!-- <input type="submit" name="addtocart" value="Add to cart"> -->
+            <button class="addtocart" type="submit" name="addtocart" value="#">Add to Cart <i style="font-size: 22px;" class='bx bxs-cart-add'></i></button>
           </form>
           <?php endforeach?>
           <br>

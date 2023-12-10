@@ -18,6 +18,12 @@
         <br>
         product_image: <input type="file" required name="product_image" id="">
         <br>
+        product_image 2: <input type="file" required name="product_image2" id="">
+        <br>
+        product_image 3: <input type="file" required name="product_image3" id="">
+        <br>
+        product_image 4: <input type="file" required name="product_image4" id="">
+        <br>
         product_price: <input type="number" required name="product_price" id="">
         <br>
         product_describe: <textarea name="product_describe" id="" cols="90" rows="10"></textarea>
