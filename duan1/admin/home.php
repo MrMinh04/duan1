@@ -1,3 +1,5 @@
 <div class="body">
-            <h2>Control panel</h2>
+    <center>
+            <h2 style="margin-top: 100px;">WELCOME CONTROL PANEL</h2>
+    </center>
 </div>

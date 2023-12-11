@@ -1,92 +1,51 @@
-<?php
-session_start();
-include "../model/pdo.php";
-
-// Kiểm tra xem giỏ hàng có sản phẩm không
-if (empty($_SESSION['giohang'])) {
-    echo "Giỏ hàng của bạn trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán.";
-    exit();
-}
-
-// Xử lý khi người dùng nhấn nút "Đặt hàng"
-if (isset($_POST['dongydathang'])) {
-    // Lấy thông tin nhận hàng từ form
-    $hoten = $_POST['hoten'];
-    $diachi = $_POST['diachi'];
-    $dienthoai = $_POST['dienthoai'];
-    $email = $_POST['email'];
-
-    // Tạo đơn hàng và lưu vào cơ sở dữ liệu (ở đây bạn cần triển khai logic lưu đơn hàng vào cơ sở dữ liệu)
-
-    // Hiển thị thông báo hoặc chuyển hướng đến trang cảm ơn
-    echo "Đơn hàng của bạn đã được đặt thành công. Cảm ơn bạn đã mua sắm!";
-    // Hoặc có thể chuyển hướng đến trang cảm ơn
-    // header("Location: thank_you_page.php");
-    // exit();
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="giohang.css">
+    <link rel="stylesheet" href="bill.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
-<body>
-    <div class="container">
-        <header>
-            <!-- Header content -->
-        </header>
-        <section class="thanhDieuHuong">
-            <!-- Navigation content -->
-        </section>
-        <div class="boxcenter">
-            <div class="row mb header">
-                <h1>Thanh toán</h1>
-            </div>
-            <div class="row mb menu">
-                <!-- Menu content -->
-            </div>
-            <div class="row mb ">
-                <div class="boxtrai mr" id="bill">
-                    <form action="cart.php" method="post">
-                        <!-- Form thông tin nhận hàng -->
-                        <div class="row">
-                            <h1>Thông tin nhận hàng</h1>
-                            <table class="thongtinnhanhang">
-                                <!-- Các trường thông tin nhận hàng -->
-                            </table>
-                        </div>
-                        <!-- Danh sách sản phẩm trong giỏ hàng -->
-                        <div class="row mb">
-                            <h1>Giỏ hàng của bạn</h1>
-                            <table>
-                                <!-- Hiển thị danh sách sản phẩm trong giỏ hàng -->
-                            </table>
-                        </div>
-                        <div class="row mb">
-                            <!-- Nút xác nhận đặt hàng -->
-                            <input type="submit" value="ĐỒNG Ý ĐẶT HÀNG" name="dongydathang">
-                            <!-- Nút xóa giỏ hàng -->
-                            <a href="cart.php?delcart=1"><input type="button" value="XÓA GIỎ HÀNG"></a>
-                            <!-- Nút tiếp tục mua sắm -->
-                            <a href="index.php"><input type="button" value="TIẾP TỤC MUA SẮM"></a>
-                        </div>
-                    </form>
-                </div>
-                <!-- Sidebar content -->
-            </div>
-            <div class="row mb footer">
-                <!-- Footer content -->
-            </div>
-        </div>
+<div class="boxto">
+    <div class="box1">
+        <h2>Thông tin đơn hàng</h2>
+        <?php foreach ($orderr as $or) : ?>
+        <h3>Mã đơn hàng: FPL-DA1-<?= $or['order_id']?></h3>
+        <h3>Người nhận: <?= $or['receive_name']?></h3>
+        <h3>Số điện thoại: <?= $or['receive_sdt']?></h3>
+        <h3>Địa chỉ: <?= $or['receive_address']?></h3>
+        <h3>Ngày đặt hàng: <?= $or['order_date']?></h3>
+        <h3>Phương thức thanh toán: <?= $or['order_pttt']?></h3>
+        <?php endforeach ?>
     </div>
+    <div class="box2">
+        <div class="ttHang">
+            <div>
+                <h2>Sản phẩm của bạn</h2>
+                            <?php foreach ($orderr_cart as $orc ):?>
+                <div class="sanpham">
+                            <?php $product_id = $orc['product_id']?>
+                            <?php $orderr_cart_product = select_orderr_cart_product($product_id)?>
+                            <?php foreach ($orderr_cart_product as $orcp):?>
+                    <div>
+                        <img src="../images/<?= $orcp['product_image']?>" alt="">
+                    </div>
+                    <div class="tt">
+                        <h3 style="font-weight: 900;"><?= $orcp['product_name']?></h3>
+                        <h4 style="font-weight: 600;" ><?= $orcp['product_price']?> VND</h4>
+                       
+                            <?php endforeach?>
+                    <h5>Kích cỡ: <?= $orc['product_size']?></h5>
+                    <h5>Màu sắc: <?= $orc['product_color']?></h5>
+                    <h5>Số lượng: <?= $orc['product_quantity']?></h5>
+                    <h4 style="font-weight: 600;">Thành tiền: <?= $orc['product_thanhtien']?> VND</h4>
+                    </div>
+                           
+                </div>
+                            <?php endforeach?>
+            </div>
+            <?php foreach ($orderr as $or) : ?>
+            <h3 style="font-weight: 600;">Tổng tiền phải trả: <?= $or['totol']?> VND</h3>
+            <?php endforeach ?>
 
-</body>
+        </div>
 
-</html>
+    </div>
+</div>
+      

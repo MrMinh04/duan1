@@ -1,468 +1,67 @@
-*{
-    padding: 0;
-    margin: 0; 
-    border: 0;
-    font-size: 100%;
-}
-body{
+.boxto{
     display: flex;
-    justify-content: center;
-}
-.container{
-    width: 100%;
-    margin: 0 auto;
-    
-}
-header{
-    display: flex;
+    width: 95%;
+    margin-left: 5%;
     justify-content: space-between;
-    width: 100%;
-    height: 60px;
-    background-color: black;
-    align-items: center;
+    margin-top: 10px;
 }
-header img{
-    padding: 20px;
-}
-.menu{
-    padding-right: 20px;
-}
-.menu a{
-    padding: 13px;
-    color: white;
-    font-size: 14px;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-.menu a:hover{
-    text-decoration: underline;
-}
-.thanhDieuHuong{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    text-align: center;
+.boxto_rong{
     width: 90%;
     margin-left: 5%;
+    margin-top: 10px;
 }
-.form{
+.boxtrai{
+    margin-top: 5px;
+}
+.boxphai{
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding-left: 3%;
+    /* padding-top: 30px; */
+    padding-bottom: 30px;
+    height: auto;
+    width: 34%;
+}
+.sanpham{
     display: flex;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 2px;
-    height: 30px;
+    /* justify-content: center; */
+    align-items: flex-start;
 }
-.form input{
-    width: 150px;
+.sanpham img{
+    width: 300px;
+    height: 300px;
 }
-.form a{
-    padding: 2px;
+.tt{
+    margin-left: 30px;
 }
-.timKiem{
-    display: flex;
-}
-.menu2 a{
-    padding: 30px;
-    font-size: 24px;
-    font-weight: 700;
-}
-.menu2 a:hover{
-    opacity: 50%;
-    color: gray;
-}
-.icon{
-    font-size: 20px;
-}
-a.icon{
-    display: flex;
-    align-items: center;
-}
-#cart{
-    margin-left: 10px;
-    font-size: 26px;
-    margin-bottom: 2px;
-    font-size: 30px;
-}
-.banner{
-    width: 90%;
-    margin-left: 5%;
-}
-.banner img{
-    width: 100%;
-    height: 520px;
-}
-i.bx.bx-chevron-right::before{
-    color:white;
-    font-size: 50px;
-}
-.next{
-    right: 0%;
-    top: 40%;
-}
-i.bx.bx-chevron-left::before{
-    color: white;
-    font-size: 50px;
-}
-.back{
-    left: 0%;
-    top: 40%;
-}
-.tieuDe{
-    background-image: linear-gradient(to bottom, rgb(175, 175, 175) 1%, rgb(222, 222, 222), rgb(255, 255, 255));
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 0px;
-}
-.tieuDe h2{
-    padding: 30px;
-    font-size: 32px;
-    text-decoration: underline solid black 2px;
-}
-.content{
-    margin-left: 5%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    overflow: auto;
-}
-.sp1{
-    width: 270px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-right: 17px;
-    
-}
-.sp1 img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    
-    
-}
-.sp1 .thongTin{
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgb(243, 237, 237);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
-}
-.sp2{
-    width: 270px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-right: 17px;
-    
-}
-.sp2 img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    
-}
-.sp2 .thongTin{
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgb(243, 237, 237);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
-}
-.sp3{
-    width: 270px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-right: 17px;
-    
-}
-.sp3 img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    
-}
-.sp3 .thongTin{
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgb(243, 237, 237);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
-}
-.sp4{
-    width: 270px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-right: 17px;
-    
-}
-.sp4 img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    
-}
-.sp4 .thongTin{
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgb(243, 237, 237);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
-}
-.buy_cart{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-}
-.buy{
-    border-radius: 5px;
-    color: white;
-    background-color: black;
-    padding: 6px;
-    width: 88%;
-}
-#addCart{
-    font-size: 24px;
-}
-.sp1 h2{
-    font-size: 20px;
-    padding: 6px;
-}
-.sp1 h3{
-    font-size: 16px;
-    color: red;
-    padding: 6px;
-
-}
-.sp1 p{
-    font-size: 12px;
-    padding: 6px;
-    word-wrap: break-word;
-}
-.sp1 h4{
-    font-size: 12px;
-    padding: 6px;
-}
-.sp2 h2{
-    font-size: 20px;
-    padding: 6px;
-}
-.sp2 h3{
-    font-size: 16px;
-    color: red;
-    padding: 6px;
-
-}
-.sp2 p{
-    font-size: 12px;
-    padding: 6px;
-    word-wrap: break-word;
-}
-.sp2 h4{
-    font-size: 12px;
-    padding: 6px;
-}
-.sp3 h2{
-    font-size: 20px;
-    padding: 6px;
-}
-.sp3 h3{
-    font-size: 16px;
-    color: red;
-    padding: 6px;
-
-}
-.sp3 p{
-    font-size: 12px;
-    padding: 6px;
-    word-wrap: break-word;
-}
-.sp3 h4{
-    font-size: 12px;
-    padding: 6px;
-}
-.sp4 h2{
-    font-size: 20px;
-    padding: 6px;
-}
-.sp4 h3{
-    font-size: 16px;
-    color: red;
-    padding: 6px;
-
-}
-.sp4 p{
-    font-size: 12px;
-    padding: 6px;
-    word-wrap: break-word;
-}
-.sp4 h4{
-    font-size: 12px;
-    padding: 6px;
-}
-.coming_soon{
-    width: 90%;
-    margin-left: 5%;
-}
-.coming_soon img{
-    width: 100%;
-}
-.content2{
-    margin-left: 5%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.content2 .sp{
-    margin-bottom: 20px;
-    margin-right: 10px;
-}
-.menu3{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin-left: 5%;
-    margin-bottom: 30px;
-}
-.menu3_con{
-    width: 32%;
-}
-.menu3_con img{
-    width: 100%;
-    height: 100%;
-}
-.menu3_chau{
-    background-color: white;
-    color: black;
-    border: 1px solid white;
-    border-radius: 25px;
-    width: 120px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: bolder;
-    top: 77%;
-    left: 10%;
-}
-.footer1{
-    display: flex;
-    justify-content: space-between;
-    background-image: linear-gradient(to bottom, rgb(150, 150, 150), rgb(110, 110, 110), rgb(80, 80, 80), rgb(60, 60, 60), rgb(30, 30, 30), black);
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
-   
-}
-.a{
-    margin-bottom: 25px;
-}
-.a a {
-    color: white;
-    font-size: 13px;
-}.aa{
-    margin-bottom: 20px;
-}
-.aa a{
-    color: rgb(207, 207, 207);
-    font-size: 12px;
-}
-.mxh{
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    height: 40px;
-}
-#aaa{
-    color: white;
-    font-size: 40px;
-}
-/*----------Product--------- */
-.ttgh{
-    display: flex;
-    margin-left: 5%;
-    
-}
-.tieude{
-    border: 1px solid black;
-    
-    
-}
-.tieude h1{
+.tt h3{
     font-size: 25px;
-    
 }
-.cart{
-    padding: 0px 5%;
-    display: flex;
-}
-.cart-top{
-    margin-bottom: 30px;
-}
-.cart-top h1{
+.tt h4{
     font-size: 20px;
 }
-.cart-content-left{
-    width: 30%;
-
+.tt h5{
+    font-size: 15px;
 }
-.cart-content-right{
-    width: 35%;
-    margin: 20px 30px 0px 0px;
-}
-.cart-content-img img{
-    width: 200px;
-    margin-bottom: 20px;
-}
-.cart-content{
-    display: flex;
-}
-.cart-content-right input{
-    border: 1px solid black;
-}
-.cart-content-right p{
-    margin: 10px 0px;
-
-}
-.thanhtoan{
-    margin-right: 200px;
-    margin-top: 50px;
-    width: 50%;
-}
-.thanhtoan h2{
-    background-color: black;
-    color: aliceblue;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 5px;
-    font-size: 20px;
-    width: 50%;
-    
-    word-spacing: 0px;
-}
-.thanhtoan p{
-    padding: 20px 0px;
-    word-spacing: 10px;
-    word-spacing: 2px;
-}
-.nhapma input{
-    width: 70%;
-    border: 1px solid black;
-    height: 30px;
-}
-h1{
+.boxto h2{
     font-size: 30px;
-    margin-left: 5%;
 }
-.content1{
-    width: 100%;
-    margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   margin-bottom: 30px;
+/* h2, h3, h4, h5, h6{
+    font-weight: 500;
+} */
+.checkout{
+    color: white;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    /* padding: 10px 40px; */
+    margin-top: 15px;
+    height: 60px;
+    width: 94%;
+    font-weight: 600;
+    font-size: 18px;
 }

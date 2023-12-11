@@ -1,215 +1,206 @@
 <?php
 session_start();
 include "../model/pdo.php";
+include "../model/sanpham.php";
+include("../model/khac.php");
+include("../model/account.php");
+$thongbao = "";
+// session_destroy();
 
-$sql_new_product = "SELECT * FROM product ";
-$new_product = pdo_query($sql_new_product);
-$sql_what_hot = "SELECT * FROM product WHERE product_category=2";
-$what_hot = pdo_query($sql_what_hot);
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-<div style="color: green;">
-        <?= $_COOKIE['message'] ?? '' ?>
-</div>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="images/logo_nen_den.png" alt="" height="50px">
-            </section>
-            <nav class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Join us</a>
-                <a href="#">Help</a>
-                <a href="#">Cart</a>
-                <a href="#">Account</a>
-            </nav>
-        </header>
-        <section class="thanhDieuHuong">
-            <section class="logo2">
-                <img src="images/logo_nen-trang.png" alt="" height="50px">
-            </section>
-            <nav class="menu2">
-                <a href="men.php">Men</a>
-                <a href="#">Women</a>
-                <a href="#">Kid</a>
-                <a href="#">Sale</a>
-            </nav>
-            <section class="timKiem">
-                    <form action="cart.php" method="post" class="form" required>
-                        <input type="text" required class="input">
-                        <i class="icon"><i class='bx bx-search'></i></i>
-                    </form>
-                    <a href="cart.php" class="icon" id="cart"><i class='bx bx-cart'></i></a>
-            </section>
-        </section>
-        <section class="banner" style="position: relative;">
-            <img id="slider"src="images/banner5.jpg" alt="">
-            <div onclick="back()" style="position: absolute;" class="back">
-                <i class='bx bx-chevron-left'></i>
-            </div>
-            <div onclick="next()" style="position: absolute;" class="next">
-                <i class='bx bx-chevron-right'></i>
-            </div>
-        </section>
-        <section class="tieuDe">
-            <h2>NEW PRODUCT</h2>
-        </section>
-        <section class="content">
-            <?php foreach ($new_product as $key => $value): ?>
-            <section class="sp">
-                <img style="height: 270px; width: 270px;" src="images/<?=$value['product_image']?>" alt="">
-                <section class="thongTin">
-                    <h2><?=$value['product_name']?></h2>
-                    <h3><?=$value['product_price']?></h3>
-                    <p><?=$value['product_describe']?></p>
-                    <div class="buy_cart">
-                    <button class="buy" data-product-id="<?=$value['product_id']?>"><h4>Buy now</h4></button>
-                    <a href="cart.php" class="icon" id="addCart"><i class='bx bx-cart'></i></a></h4>
-                    </div>
-                </section>
-            </section>
-            <?php endforeach ?>
-        </section>
-        <section class="tieuDe">
-            <h2>COMING SOON</h2>
-        </section>
-        <section class="coming_soon">
-            <img src="images/coming soon.png" alt="">
-        </section>
-        <section class="tieuDe">
-            <h2>WHAT'S HOT</h2>
-        </section>
-        <section class="content2">
-            <?php foreach ($what_hot as $key => $value): ?>
-            <section class="sp">
-                <img style="height: 270px; width: 270px;" src="images/<?=$value['product_image']?>" alt="">
-                <section class="thongTin">
-                    <h2><?=$value['product_name']?></h2>
-                    <h3><?=$value['product_price']?></h3>
-                    <p><?=$value['product_describe']?></p>
-                    <div class="buy_cart">
-                    <button class="buy"><h4>Buy now</h4></button>
-                    <a href="" class="icon" id="addCart"><i class='bx bx-cart'></i></a>
-                    </div>
-                </section>
-            </section>
-            <?php endforeach ?>
-        </section>
-        <section class="tieuDe">
-            <h2>WHO ARE YOU SHOPPING FOR?</h2>
-        </section>
-        <section class="menu3">
-            <div class="menu3_con" style="position: relative;">
-                <img src="images/Rectangle 8.png" alt="">
-                <a href="women.php"><button class="menu3_chau" style="position: absolute;">Women's</button></a>
-            </div>
-            <div class="menu3_con" style="position: relative;">
-                <img src="images/Rectangle 9.png" alt="">
-                <a href="men.php"><button class="menu3_chau" style="position: absolute;">Men's</button></a>
-            </div>
-            <div class="menu3_con" style="position: relative;">
-                <img src="images/Rectangle 10.png" alt="">
-                <a href="kid.php"><button class="menu3_chau" style="position: absolute;">Chidrent's</button></a>
-            </div>
-        </section>
-        <footer>
-            <div class="footer1">
-                <div class="footer1_con">
-                    <div class="a"><a href="#">FIND A STORE</a><br></div>
-                    <div class="a"><a href="#">BECOME A MEMBER</a><br></div>
-                    <div class="a"><a href="#">Send Us Feedback</a><br></div>
-                </div>
-                <div class="footer1_con">
-                    <div class="a"><a href="#">GET HELP</a><br></div>
-                    <div class="aa"><a href="#">Delivery</a><br></div>
-                    <div class="aa"><a href="#">Order Status</a><br></div>
-                    <div class="aa"><a href="#">Returns</a><br></div>
-                    <div class="aa"><a href="#">Payment Options</a><br></div>
-                    <div class="aa"><a href="#">Contact Us</a><br></div>
-                </div>
-                <div class="footer1_con">
-                    <div class="a"><a href="#">ABOUT HMĐ STORE</a><br></div>
-                    <div class="aa"><a href="#">News</a><br></div>
-                    <div class="aa"><a href="#">Careers</a><br></div>
-                    <div class="aa"><a href="#">Investors</a><br></div>
-                    <div class="aa"><a href="#">Sustainability</a><br></div>
-                </div>
-                <div class="rong" style="width: 20px;">
-                </div>
-                <div class="mxh">
-                    <a href="https://www.facebook.com/mr.minh04" class="icon" id="aaa">
-                        <i class='bx bxl-facebook-circle'></i></a>
-                    <a href="https://www.instagram.com/mr_minh04/" class="icon" id="aaa">
-                        <i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.youtube.com/channel/UCrZOlzK3dPIoGZW6zdTDEoA" class="icon" id="aaa">
-                        <i class='bx bxl-youtube'></i></a>
-                    <a href="https://www.tiktok.com/@mr_minh04" class="icon" id="aaa">
-                        <i class='bx bxl-tiktok' ></i></a>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <script>
-        var images = ["images/banner5.jpg","images/banner6.jpg","images/banner7.jpg","images/banner3.jpg"];
-        var num = 0;
-        function next(){
-            var silder = document.getElementById("slider");
-            num++;
-            if(num >= images.length){
-                num = 0;
+if (!isset($_SESSION['my_cart'])) $_SESSION['my_cart']=[];
+$product = display_sanpham();
+$what_hot = display_what_hot();
+$new_product = display_new_product();
+$men_product = display_men_product();
+$men_featured = display_men_featured();
+$women_product = display_women_product();
+$women_featured = display_women_featured();
+$kid_product = display_kid_product();
+$kid_featured = display_kid_featured();
+$sale_product = display_sale_product();
+$sale_featured = display_sale_featured();
+include "header.php";
+if((isset($_GET['act'])) && ($_GET['act'])!=""){
+    $act = $_GET['act'];
+    switch ($act) {
+        case 'men':
+            include "men.php";
+            break;
+        case 'women':
+            include "women.php";
+            break;
+        case 'kid':
+            include "kid.php";
+            break;
+        case 'sale':
+            include "sale.php";
+            break;
+        case 'allsanpham':
+            if (isset($_POST["kw"]) && $_POST["kw"]!=""){
+                $kw = $_POST['kw'];
+            }else{
+                $kw = "";
             }
-            silder.src = images[num];
-        }
-        function back(){
-            var silder = document.getElementById("slider");
-            num--;
-            if(num < 0){
-                num = images.length-1;
+            $product_view = display_sanpham_view($kw);
+            include "allsanpham.php";
+            break;    
+        case 'sanphamct':
+            if (isset($_GET["product_id"]) && $_GET["product_id"]>0){
+                $product_id = $_GET['product_id'];
+                $update = load_1_san_pham($product_id);
+                foreach ($update as $up):
+                if ((isset($up['product_image2'])) && ($up['product_image2'])!="") {
+                    $sql = "SELECT * FROM color";
+                    $color = pdo_query($sql);
+                    $sql = "SELECT * FROM size";
+                    $size = pdo_query($sql);
+                    include "sanphamct.php";
+                }else{
+                    $sql = "SELECT * FROM color";
+                    $color = pdo_query($sql);
+                    $sql = "SELECT * FROM size";
+                    $size = pdo_query($sql);
+                    include "sanphamct2.php";
+                } 
+                endforeach;
+                
             }
-            slider.src = images[num];
-        }
-        setInterval(next,4000);
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    // Lấy tất cả các phần tử có lớp 'buy'
-    var buyButtons = document.querySelectorAll('.buy');
+            
+            // include "sanphamct.php";
+            break;
+        case 'cart':
+            if (isset($_POST["addtocart"]) && $_POST["addtocart"]){
+                $product_id = $_POST['product_id'];
+                $product_name = $_POST['product_name'];
+                $product_image = $_POST['product_image'];
+                $product_price = $_POST['product_price'];
+                $product_color = $_POST['color'];
+                $product_size = $_POST['size'];
+                $sl = $_POST['sl'];
+                $thanhtien = $product_price*$sl;
+                $spadd = [$product_id,$product_name,$product_price,$product_image,$sl,$thanhtien,$product_color,$product_size];
+                array_push($_SESSION['my_cart'],$spadd);
+            }
+            include "cart.php";
+            break;
+        case 'cart_home':
+            if($_SESSION['my_cart'] != []){
+                include "cart.php";
+            }else{
+                include "cart_rong.php";
+            }
+            break;
+        case 'delcart':
+            if(isset($_GET['idcart'])){
+                array_splice($_SESSION['my_cart'],$_GET['idcart'],1);
+            }else{
+                $_SESSION['my_cart']=[];
+            }
+            header('location: index.php?act=cart');
+            break;
+        case 'checkout':
+            if($_SESSION['my_cart'] != []){
+                include "checkout.php";
+            }else{
+                include "home.php";
+            }
+            
+            break;
+        case 'checkoutsuccess':
+            if (isset($_POST["checkout"]) && $_POST["checkout"]){
+                $receive_name = $_POST['receive_name'];
+                $receive_sdt = $_POST['receive_sdt'];
+                $receive_address_tinh = $_POST['receive_address_tinh'];
+                $receive_address_huyen = $_POST['receive_address_huyen'];
+                $receive_address_xa = $_POST['receive_address_xa'];
+                $receive_address_thon = $_POST['receive_address_thon'];
+                $receive_address = "$receive_address_thon, $receive_address_xa, $receive_address_huyen,        $receive_address_tinh";
+                $order_pttt = $_POST['order_pttt'];
+                $order_date = date('h:i:sa d/m/Y');
+                $totol = tongdonhang();
+                
+                $order_cart_id = insert_orderr($receive_name,$receive_address,$receive_sdt,$order_pttt,$order_date,$totol);
 
-    // Gắn sự kiện nhấp vào mỗi nút
-    buyButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Lấy ID sản phẩm từ thuộc tính dữ liệu
-            var productId = this.dataset.productId;
 
-            // Sử dụng AJAX để gửi ID sản phẩm đến máy chủ của bạn
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'cart.php?action=add&product_id=' + productId, true);
-
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Xử lý phản hồi từ máy chủ, có thể là thông báo hoặc thực hiện bất kỳ hành động nào khác bạn muốn
-                    console.log(xhr.responseText);
-                    // Hiển thị thông báo cho người dùng
-                    alert("Sản phẩm đã được thêm vào giỏ hàng thành công!");
+                foreach(($_SESSION['my_cart']) as $cart ) {
+                    $product_id = $cart['0'];
+                    $product_name = $cart['1'];
+                    $product_price = $cart['2'];
+                    $product_image = $cart['3'];
+                    $product_quantity = $cart['4'];
+                    $product_thanhtien = $cart['5'];
+                    $product_color = $cart['6'];
+                    $product_size = $cart['7'];
+                    insert_oderr_cart($product_id,$product_quantity,$product_thanhtien,$product_color,$product_size,$order_cart_id);
                 }
-            };
 
-            xhr.send();
-        });
-    });
-});
-
-    </script>
-</body>
-</html>
+                $_SESSION['my_cart'] = [];
+            }
+            include "checkoutsuccess.php";
+            break;
+        case 'bill':
+            $order_cart_id = $_GET['order_cart_id'];
+            $orderr = select_orderr($order_cart_id);
+            $orderr_cart = select_orderr_cart($order_cart_id);
+            foreach ($orderr_cart as $orc){
+                $product_id = $orc['product_id'];
+                $orderr_cart_product = select_orderr_cart_product($product_id);
+            }
+            
+            include "bill.php";
+            break;
+        case 'account':
+            if (isset($_SESSION['user'])){
+                header('location: login_thanh_cong.php');
+            }else{
+            
+            include "login.php";
+            break;
+        }
+        case 'register':
+            if (isset($_POST["register"]) && $_POST["register"]){
+                $account_user = $_POST['account_user'];
+                $account_pass = $_POST['account_pass'];
+                $account_sdt = $_POST['account_sdt'];
+                $account_email = $_POST['account_email'];
+                $account_address = $_POST['account_address'];
+                register($account_user, $account_pass, $account_sdt, $account_email, $account_address);
+                $thongbao = "Chúc mừng bạn đã dăng ký thành công. Hãy đăng nhập để trải nghiệm";
+            }
+            
+            include "register.php";
+            break;
+        case 'login':
+            
+            if (isset($_POST['login']) && $_POST['login']){
+                $account_user = $_POST['account_user'];
+                $account_pass = $_POST['account_pass'];
+                $check_user = check_user($account_user,$account_pass);
+                if(is_array($check_user)){
+                    $_SESSION['user']=$check_user;
+                    header('location: index.php');
+                    
+                }else{
+                    $thongbao = "Tài khoản không tồn tại";
+                }
+            }
+            if (isset($_SESSION['user'])){
+                include "login_thanh_cong.php";
+            }else{
+            
+            include "login.php";
+            break;
+        }
+        case 'logout':
+            if (isset($_POST['logout']) && $_POST['logout']){
+            session_destroy();
+        }
+            header('location: index.php');
+            break;
+        default:
+            include "home.php";
+            break;
+    }
+}else include "home.php";
+include "footer.php";
+?>
